@@ -43,4 +43,4 @@ The `WaveConfig` object flows down from App. ControlPanel updates trigger re-ren
 
 ## Deployment
 
-Deployed to GitHub Pages via `.github/workflows/deploy.yml` on push to `master`. The `base` path in `vite.config.ts` is set to `/nazare-waves/`.
+Deployed to GitHub Pages via `.github/workflows/deploy.yml` on push to `master`. The `base` path in `vite.config.ts` is set to `./` (relative), making the app work on any domain or subdirectory.
