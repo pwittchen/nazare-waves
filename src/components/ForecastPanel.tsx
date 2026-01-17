@@ -112,14 +112,24 @@ export function ForecastPanel({ config, onChange }: ForecastPanelProps) {
       <div className="forecast-header">
         <div className="forecast-title">
           <h2>Nazaré Forecast</h2>
-          <a
-            href="https://www.windguru.cz/75856"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="forecast-link"
-          >
-            Windguru ↗
-          </a>
+          <div className="forecast-links">
+            <a
+              href="https://www.windguru.cz/75856"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="forecast-link"
+            >
+              Windguru ↗
+            </a>
+            <a
+              href="https://nazarewaves.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="forecast-link"
+            >
+              NazareWaves ↗
+            </a>
+          </div>
         </div>
         <button
           className="panel-toggle"

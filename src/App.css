@@ -546,9 +546,14 @@ input[type="range"]::-webkit-slider-runnable-track {
   color: var(--foreground);
 }
 
+.forecast-links {
+  display: flex;
+  gap: 8px;
+}
+
 .forecast-link {
   font-size: 0.625rem;
-  color: var(--accent-blue);
+  color: #60a5fa;
   text-decoration: none;
 }
 
