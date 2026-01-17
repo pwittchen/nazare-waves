@@ -110,4 +110,4 @@ To enable GitHub Pages deployment:
 
 ## License
 
-MIT
+GPL
