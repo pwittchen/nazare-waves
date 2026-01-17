@@ -15,20 +15,20 @@ A 3D wave simulator inspired by the famous Nazaré waves in Portugal. Built with
 ## Installation
 
 ```bash
-npm install
+bun install
 ```
 
 ## Usage
 
 ```bash
 # Development server
-npm run dev
+bun dev
 
 # Production build
-npm run build
+bun run build
 
 # Preview production build
-npm run preview
+bun run preview
 ```
 
 ## Configuration
@@ -84,6 +84,7 @@ All wave parameters can be configured in one place: `src/config/waveConfig.ts`
 
 ## Tech Stack
 
+- [Bun](https://bun.sh/) - JavaScript runtime and package manager
 - [React](https://react.dev/) - UI framework
 - [Three.js](https://threejs.org/) - 3D graphics library
 - [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) - React renderer for Three.js
