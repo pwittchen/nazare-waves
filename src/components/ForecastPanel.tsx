@@ -19,6 +19,12 @@ interface ForecastData {
   error: string | null;
 }
 
+function degreesToCompass(degrees: number): string {
+  const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+  const index = Math.round(((degrees % 360) + 360) % 360 / 45) % 8;
+  return directions[index];
+}
+
 export function ForecastPanel({ config, onChange }: ForecastPanelProps) {
   const [isOpen, setIsOpen] = useState(true);
   const [forecast, setForecast] = useState<ForecastData>({
@@ -193,7 +199,7 @@ export function ForecastPanel({ config, onChange }: ForecastPanelProps) {
                 </div>
                 <div className="detail-item">
                   <span className="detail-label">Wave Dir</span>
-                  <span className="detail-value">{selectedEntry.waveDirection}°</span>
+                  <span className="detail-value">{selectedEntry.waveDirection}° ({degreesToCompass(selectedEntry.waveDirection)})</span>
                 </div>
                 <div className="detail-item">
                   <span className="detail-label">Wind</span>
@@ -201,7 +207,7 @@ export function ForecastPanel({ config, onChange }: ForecastPanelProps) {
                 </div>
                 <div className="detail-item">
                   <span className="detail-label">Wind Dir</span>
-                  <span className="detail-value">{selectedEntry.windDirection}°</span>
+                  <span className="detail-value">{selectedEntry.windDirection}° ({degreesToCompass(selectedEntry.windDirection)})</span>
                 </div>
                 <button
                   className="detail-item detail-item-button"
