@@ -107,6 +107,7 @@ export function ControlPanel({ config, onChange }: ControlPanelProps) {
       wireframe: config.wireframe,
       animateWaves: config.animateWaves,
       waveColor: config.waveColor,
+      theme: config.theme,
     });
   };
 
@@ -333,6 +334,11 @@ export function ControlPanel({ config, onChange }: ControlPanelProps) {
           </button>
           {expandedSections.visual && (
             <div className="section-content">
+              <Toggle
+                label="Dark Theme"
+                checked={config.theme === 'dark'}
+                onChange={(v) => updateConfig('theme', v ? 'dark' : 'light')}
+              />
               <Toggle
                 label="Animate Waves"
                 checked={config.animateWaves}

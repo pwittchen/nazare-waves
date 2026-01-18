@@ -4,7 +4,7 @@
  */
 
 :root {
-  /* Dark color palette - shadcn-ui dark theme */
+  /* Dark color palette - shadcn-ui dark theme (default) */
   --background: #09090b;
   --foreground: #fafafa;
   --card: #0a0a0f;
@@ -28,6 +28,29 @@
   /* Sizing */
   --radius: 8px;
   --panel-width: 320px;
+}
+
+/* Light theme overrides */
+[data-theme="light"] {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #e2e8f0;
+  --accent-foreground: #0f172a;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #cbd5e1;
+  --primary: #0f172a;
+  --primary-foreground: #f8fafc;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+
+  /* Accent color (slightly adjusted for light theme) */
+  --accent-blue: #2563eb;
+  --accent-blue-muted: #dbeafe;
 }
 
 * {
@@ -390,6 +413,15 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 .toggle-switch.active .toggle-thumb {
   transform: translateX(18px);
+}
+
+/* Light theme toggle fix - white thumb on blue background for better contrast */
+[data-theme="light"] .toggle-switch.active .toggle-thumb {
+  background: #ffffff;
+}
+
+[data-theme="light"] .toggle-switch:not(.active) .toggle-thumb {
+  background: #64748b;
 }
 
 /* Color Picker */

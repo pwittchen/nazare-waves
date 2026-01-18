@@ -14,6 +14,11 @@ import './App.css';
 function App() {
   const [config, setConfig] = useState<WaveConfig>(defaultWaveConfig);
 
+  // Apply theme to document for CSS variable switching
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', config.theme);
+  }, [config.theme]);
+
   // On startup, fetch forecast and apply the nearest entry to current time
   useEffect(() => {
     fetchForecastData().then(result => {
